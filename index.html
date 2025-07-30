@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDCET 2026 - Physics Quiz Platform</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Landing Page -->
+    <div id="landingPage" class="page active">
+      <div class="container">
+        <h1 class="main-title">DDCET 2026</h1>
+        <p class="tagline">PRESENTED BY HARSH JAYSWAL DDCET 2026</p>
+        <div class="welcome-content">
+          <h2>Welcome to Physics Quiz Platform</h2>
+          <p>Test your knowledge of Units and Measurement</p>
+          <button id="startBtn" class="primary-btn">Start Quiz Journey</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="registrationPage" class="page">
+      <div class="container">
+        <h2>Create Your Account</h2>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="studentName">Full Name:</label>
+            <input type="text" id="studentName" required />
+          </div>
+          <div class="form-group">
+            <label for="enrollmentNo">Enrollment Number:</label>
+            <input type="text" id="enrollmentNo" required />
+          </div>
+          <button type="submit" class="primary-btn">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Quiz Selection Page -->
+    <div id="quizSelectionPage" class="page">
+      <div class="container">
+        <div class="user-info">
+          <span id="userNameDisplay"></span> |
+          <span id="enrollmentDisplay"></span>
+        </div>
+        <h2>Select Your Quiz</h2>
+        <div class="quiz-grid" id="quizGrid"></div>
+      </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quizPage" class="page">
+      <div class="container">
+        <div class="quiz-header">
+          <div class="quiz-info">
+            <span id="currentQuizTitle"></span>
+            <div class="progress-info">
+              Question <span id="currentQuestion">1</span> of
+              <span id="totalQuestions">10</span>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="question-container">
+          <h3 id="questionText"></h3>
+          <div class="options-container" id="optionsContainer"></div>
+          <button id="nextBtn" class="primary-btn" disabled>
+            Next Question
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Page -->
+    <div id="resultsPage" class="page">
+      <div class="container">
+        <div class="results-container">
+          <h2>Quiz Complete!</h2>
+          <div class="score-display">
+            <div class="score-circle">
+              <span id="scorePercentage">0%</span>
+            </div>
+            <p>
+              You scored <span id="finalScore">0</span> out of
+              <span id="totalScore">0</span>
+            </p>
+          </div>
+          <div class="performance-message" id="performanceMessage"></div>
+          <div class="action-buttons">
+            <button id="viewLeaderboardBtn" class="primary-btn">
+              View Leaderboard
+            </button>
+            <button id="takeAnotherQuizBtn" class="secondary-btn">
+              Take Another Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Page -->
+    <div id="leaderboardPage" class="page">
+      <div class="container">
+        <h2>🏆 Leaderboard</h2>
+        <div class="leaderboard-tabs">
+          <button class="tab-btn active" data-quiz="all">All Quizzes</button>
+          <button class="tab-btn" data-quiz="current">Current Quiz</button>
+        </div>
+        <div class="leaderboard-container" id="leaderboardContainer"></div>
+        <button id="backToQuizzesBtn" class="secondary-btn">
+          Back to Quizzes
+        </button>
+      </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
